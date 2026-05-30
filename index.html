@@ -1,0 +1,2026 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mayopp KMJ Ventures — Mayopp's Agro foods. Premium natural ingredients transformed into artisan agro products you can trust."
+    />
+    <title>Mayopp KMJ Ventures | Mayopp's Agro Foods</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-deep: #04060d;
+        --bg-elevated: #0b1220;
+        --bg-glass: rgba(12, 20, 36, 0.62);
+        --border-glass: rgba(0, 240, 255, 0.14);
+        --text-primary: #f0f6ff;
+        --text-muted: #94a3b8;
+        --text-dim: #64748b;
+        --accent-cyan: #00f0ff;
+        --accent-blue: #3b82f6;
+        --accent-green: #34d399;
+        --glow-cyan: 0 0 40px rgba(0, 240, 255, 0.35);
+        --glow-btn: 0 0 28px rgba(0, 240, 255, 0.55), 0 0 60px rgba(59, 130, 246, 0.25);
+        --font-body: 'Inter', system-ui, sans-serif;
+        --font-display: 'Space Grotesk', system-ui, sans-serif;
+        --nav-height: 4.25rem;
+        --radius-lg: 1.25rem;
+        --radius-xl: 1.75rem;
+        --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+        --section-pad: clamp(4.5rem, 10vw, 7.5rem);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: calc(var(--nav-height) + 1rem);
+      }
+
+      body {
+        font-family: var(--font-body);
+        background: var(--bg-deep);
+        color: var(--text-primary);
+        line-height: 1.6;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .skip-link {
+        position: absolute;
+        top: -100%;
+        left: 1rem;
+        z-index: 9999;
+        padding: 0.75rem 1.25rem;
+        background: var(--accent-cyan);
+        color: var(--bg-deep);
+        font-weight: 700;
+        border-radius: 0.5rem;
+        transition: top 0.2s;
+      }
+
+      .skip-link:focus {
+        top: 1rem;
+      }
+
+      /* ─── Background layers ─── */
+      .bg-grid {
+        position: fixed;
+        inset: 0;
+        z-index: -3;
+        background-image:
+          linear-gradient(rgba(0, 240, 255, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 240, 255, 0.04) 1px, transparent 1px);
+        background-size: 64px 64px;
+        mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, black 20%, transparent 75%);
+      }
+
+      .bg-orb {
+        position: fixed;
+        border-radius: 50%;
+        filter: blur(90px);
+        z-index: -2;
+        pointer-events: none;
+      }
+
+      .bg-orb--cyan {
+        width: 520px;
+        height: 520px;
+        top: -120px;
+        right: -80px;
+        background: rgba(0, 240, 255, 0.12);
+      }
+
+      .bg-orb--blue {
+        width: 440px;
+        height: 440px;
+        bottom: 10%;
+        left: -120px;
+        background: rgba(59, 130, 246, 0.1);
+      }
+
+      .bg-orb--green {
+        width: 360px;
+        height: 360px;
+        top: 45%;
+        right: 15%;
+        background: rgba(52, 211, 153, 0.07);
+      }
+
+      /* ─── Navigation ─── */
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        height: var(--nav-height);
+        display: flex;
+        align-items: center;
+        transition:
+          background 0.45s var(--ease-out),
+          border-color 0.45s var(--ease-out),
+          box-shadow 0.45s var(--ease-out);
+        border-bottom: 1px solid transparent;
+      }
+
+      .nav.is-scrolled {
+        background: rgba(4, 6, 13, 0.72);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border-color: var(--border-glass);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+      }
+
+      .nav__inner {
+        position: relative;
+        width: min(1200px, 100%);
+        margin: 0 auto;
+        padding: 0 clamp(1.25rem, 4vw, 2rem);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+      }
+
+      .nav__brand {
+        display: flex;
+        flex-direction: column;
+        gap: 0.05rem;
+      }
+
+      .nav__brand-name {
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: clamp(1.2rem, 2.8vw, 1.35rem);
+        letter-spacing: -0.02em;
+        background: linear-gradient(90deg, var(--text-primary), var(--accent-cyan));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .nav .nav__brand-name {
+        font-size: clamp(1.4rem, 3.3vw, 1.65rem);
+      }
+
+      .nav__brand-tag {
+        font-size: 0.65rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--text-dim);
+      }
+
+      .nav__links {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        list-style: none;
+      }
+
+      .nav__links a {
+        padding: 0.5rem 0.85rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--text-muted);
+        border-radius: 999px;
+        transition:
+          color 0.25s,
+          background 0.25s;
+      }
+
+      .nav__links a:hover,
+      .nav__links a:focus-visible {
+        color: var(--accent-cyan);
+        background: rgba(0, 240, 255, 0.08);
+        outline: none;
+      }
+
+      .nav__cta {
+        padding: 0.55rem 1.15rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+        color: var(--bg-deep);
+        box-shadow: var(--glow-btn);
+        transition:
+          transform 0.25s var(--ease-out),
+          box-shadow 0.25s;
+      }
+
+      .nav__cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 0 36px rgba(0, 240, 255, 0.65);
+      }
+
+      .nav__toggle {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 102;
+        background: none;
+        border: 1px solid var(--border-glass);
+        color: var(--text-primary);
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: 0.65rem;
+        cursor: pointer;
+        padding: 0;
+      }
+
+      .nav__toggle-icon {
+        position: relative;
+        display: block;
+        width: 1.15rem;
+        height: 0.9rem;
+      }
+
+      .nav__toggle-icon span {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        border-radius: 999px;
+        background: currentColor;
+        transition:
+          transform 0.28s var(--ease-out),
+          top 0.28s var(--ease-out),
+          opacity 0.2s ease;
+      }
+
+      .nav__toggle-icon span:nth-child(1) {
+        top: 0;
+      }
+
+      .nav__toggle-icon span:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .nav__toggle-icon span:nth-child(3) {
+        top: 100%;
+        transform: translateY(-100%);
+      }
+
+      .nav__toggle.is-active .nav__toggle-icon span:nth-child(1) {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      .nav__toggle.is-active .nav__toggle-icon span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .nav__toggle.is-active .nav__toggle-icon span:nth-child(3) {
+        top: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+      }
+
+      /* ─── Buttons ─── */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.95rem 1.75rem;
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 0.95rem;
+        border-radius: 999px;
+        border: none;
+        cursor: pointer;
+        transition:
+          transform 0.3s var(--ease-out),
+          box-shadow 0.3s;
+      }
+
+      .btn--glow {
+        background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-blue) 100%);
+        color: var(--bg-deep);
+        box-shadow: var(--glow-btn);
+      }
+
+      .btn--glow:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 0 48px rgba(0, 240, 255, 0.6);
+      }
+
+      .btn--ghost {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--border-glass);
+        color: var(--text-primary);
+      }
+
+      .btn--ghost:hover {
+        border-color: rgba(0, 240, 255, 0.4);
+        background: rgba(0, 240, 255, 0.06);
+      }
+
+      .btn--whatsapp {
+        background: #25d366;
+        color: #fff;
+        box-shadow: 0 0 32px rgba(37, 211, 102, 0.35);
+      }
+
+      .btn--whatsapp:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 0 48px rgba(37, 211, 102, 0.55);
+      }
+
+      .btn svg {
+        width: 1.15rem;
+        height: 1.15rem;
+        flex-shrink: 0;
+      }
+
+      .contact-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+      }
+
+      .float-whatsapp {
+        position: fixed;
+        bottom: clamp(1.25rem, 4vw, 1.75rem);
+        right: clamp(1.25rem, 4vw, 1.75rem);
+        z-index: 90;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3.5rem;
+        height: 3.5rem;
+        padding: 0;
+        color: #fff;
+        text-decoration: none;
+        background: #25d366;
+        border-radius: 50%;
+        box-shadow:
+          0 8px 32px rgba(0, 0, 0, 0.35),
+          0 0 40px rgba(37, 211, 102, 0.4);
+        transition:
+          transform 0.3s var(--ease-out),
+          box-shadow 0.3s;
+      }
+
+      .float-whatsapp:hover {
+        transform: translateY(-4px) scale(1.03);
+        box-shadow:
+          0 12px 40px rgba(0, 0, 0, 0.4),
+          0 0 56px rgba(37, 211, 102, 0.55);
+      }
+
+      .float-whatsapp svg {
+        width: 1.65rem;
+        height: 1.65rem;
+        flex-shrink: 0;
+      }
+
+      /* ─── Layout ─── */
+      .container {
+        width: min(1200px, 100%);
+        margin: 0 auto;
+        padding: 0 clamp(1.25rem, 4vw, 2rem);
+      }
+
+      .section-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--accent-cyan);
+        margin-bottom: 1rem;
+      }
+
+      .section-label::before {
+        content: '';
+        width: 2rem;
+        height: 1px;
+        background: linear-gradient(90deg, var(--accent-cyan), transparent);
+      }
+
+      .section-title {
+        font-family: var(--font-display);
+        font-size: clamp(2rem, 5vw, 3.25rem);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        line-height: 1.08;
+        margin-bottom: 1rem;
+      }
+
+      .section-lead {
+        font-size: clamp(1rem, 2vw, 1.125rem);
+        color: var(--text-muted);
+        max-width: 36rem;
+        line-height: 1.7;
+      }
+
+      .glass-card {
+        background: var(--bg-glass);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid var(--border-glass);
+        border-radius: var(--radius-lg);
+        transition:
+          transform 0.4s var(--ease-out),
+          border-color 0.4s,
+          box-shadow 0.4s;
+      }
+
+      .glass-card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(0, 240, 255, 0.28);
+        box-shadow: var(--glow-cyan);
+      }
+
+      /* ─── Reveal animations ─── */
+      .reveal {
+        opacity: 0;
+        transform: translateY(32px);
+        transition:
+          opacity 0.8s var(--ease-out),
+          transform 0.8s var(--ease-out);
+      }
+
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .reveal-delay-1 {
+        transition-delay: 0.1s;
+      }
+      .reveal-delay-2 {
+        transition-delay: 0.2s;
+      }
+      .reveal-delay-3 {
+        transition-delay: 0.3s;
+      }
+
+      /* ─── Hero ─── */
+      .hero {
+        min-height: 100svh;
+        padding-top: calc(var(--nav-height) + 2rem);
+        padding-bottom: 4rem;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(2rem, 5vw, 4rem);
+        align-items: center;
+      }
+
+      .hero__content {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      .hero__visual {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      .hero__badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.4rem 0.9rem;
+        border-radius: 999px;
+        border: 1px solid var(--border-glass);
+        background: rgba(0, 240, 255, 0.06);
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent-cyan);
+        margin-bottom: 1.5rem;
+      }
+
+      .hero__badge-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--accent-green);
+        box-shadow: 0 0 8px var(--accent-green);
+        animation: pulse 2s ease infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.45;
+        }
+      }
+
+      .hero__title {
+        font-family: var(--font-display);
+        font-size: clamp(2.75rem, 7vw, 4.75rem);
+        font-weight: 700;
+        letter-spacing: -0.04em;
+        line-height: 0.98;
+        margin-bottom: 1.25rem;
+      }
+
+      .hero__title span {
+        background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue) 55%, var(--accent-green));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .hero__sub {
+        font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+        color: var(--text-muted);
+        max-width: 32rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.55;
+      }
+
+      .hero__tagline {
+        font-family: var(--font-display);
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--accent-green);
+        letter-spacing: 0.04em;
+        margin-bottom: 2rem;
+      }
+
+      .hero__intro .hero__tagline {
+        margin-bottom: 0;
+      }
+
+      .hero__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 2.5rem;
+      }
+
+      .hero__stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      .hero__stat-value {
+        font-family: var(--font-display);
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: var(--text-primary);
+      }
+
+      .hero__stat-label {
+        font-size: 0.8rem;
+        color: var(--text-dim);
+        margin-top: 0.15rem;
+      }
+
+      .hero__visual {
+        position: relative;
+      }
+
+      .hero__transform {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: 0.75rem;
+        align-items: center;
+      }
+
+      .hero__panel {
+        position: relative;
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        border: 1px solid var(--border-glass);
+        aspect-ratio: 4 / 5;
+        box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+      }
+
+      .hero__panel img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 8s var(--ease-out);
+      }
+
+      .hero__panel:hover img {
+        transform: scale(1.06);
+      }
+
+      .hero__panel-label {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1rem 1.1rem;
+        background: linear-gradient(transparent, rgba(4, 6, 13, 0.92));
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .hero__panel-label--raw {
+        color: var(--accent-green);
+      }
+
+      .hero__panel-label--finished {
+        color: var(--accent-cyan);
+      }
+
+      .hero__arrow {
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(0, 240, 255, 0.1);
+        border: 1px solid var(--border-glass);
+        color: var(--accent-cyan);
+        flex-shrink: 0;
+      }
+
+      .hero__arrow--process {
+        position: relative;
+        width: 3.25rem;
+        height: 3.25rem;
+        box-shadow: 0 0 24px rgba(0, 240, 255, 0.15);
+      }
+
+      .hero__arrow-ring {
+        position: absolute;
+        inset: -4px;
+        border-radius: 50%;
+        border: 1px dashed rgba(0, 240, 255, 0.2);
+        animation: processSpin 10s linear infinite;
+      }
+
+      .hero__arrow--process svg {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+
+      .hero__deco-ring {
+        position: absolute;
+        inset: -12%;
+        border: 1px dashed rgba(0, 240, 255, 0.15);
+        border-radius: 50%;
+        animation: spin 40s linear infinite;
+        pointer-events: none;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* ─── Features ─── */
+      .features {
+        padding: var(--section-pad) 0;
+      }
+
+      .features__header {
+        text-align: center;
+        margin-bottom: 3.5rem;
+      }
+
+      .features__header .section-lead {
+        margin-inline: auto;
+      }
+
+      .features__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+      }
+
+      .feature-card {
+        padding: 1.75rem 1.5rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .feature-card__icon {
+        width: 2.75rem;
+        height: 2.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.75rem;
+        background: rgba(0, 240, 255, 0.1);
+        border: 1px solid var(--border-glass);
+        margin-bottom: 1.25rem;
+        color: var(--accent-cyan);
+      }
+
+      .feature-card__icon svg {
+        width: 1.35rem;
+        height: 1.35rem;
+      }
+
+      .feature-card h3 {
+        font-family: var(--font-display);
+        font-size: 1.15rem;
+        font-weight: 600;
+        margin-bottom: 0.6rem;
+      }
+
+      .feature-card p {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        line-height: 1.65;
+      }
+
+      .feature-card__glow {
+        position: absolute;
+        top: -40%;
+        right: -30%;
+        width: 140px;
+        height: 140px;
+        background: radial-gradient(circle, rgba(0, 240, 255, 0.12), transparent 70%);
+        pointer-events: none;
+      }
+
+      /* ─── Products catalog ─── */
+      .showcase {
+        padding: clamp(2.5rem, 6vw, 3.5rem) 0 var(--section-pad);
+        background: linear-gradient(180deg, transparent, rgba(11, 18, 32, 0.6), transparent);
+      }
+
+      .showcase__header {
+        text-align: center;
+        max-width: 640px;
+        margin: 0 auto clamp(1.5rem, 4vw, 2.25rem);
+      }
+
+      .products-list {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(1.25rem, 3vw, 1.75rem);
+      }
+
+      .product-item {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: clamp(1rem, 2.5vw, 1.5rem);
+        align-items: stretch;
+        padding: clamp(1rem, 2.5vw, 1.35rem);
+        border-radius: var(--radius-xl);
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
+      }
+
+      .product-item__visual {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: clamp(0.85rem, 2vw, 1.1rem);
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(4, 6, 13, 0.35);
+      }
+
+      .product-item__name {
+        font-family: var(--font-display);
+        font-size: clamp(1.25rem, 2.8vw, 1.55rem);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        margin: 0;
+        padding-bottom: 0.65rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        color: var(--text-primary);
+      }
+
+      .product-item__media {
+        position: relative;
+        flex: 1;
+        min-height: clamp(200px, 28vw, 260px);
+        border-radius: calc(var(--radius-lg) - 4px);
+        overflow: hidden;
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(4, 6, 13, 0.45));
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .product-item__media img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+        padding: 0.65rem;
+        transition: transform 0.6s var(--ease-out);
+      }
+
+      .product-item:hover .product-item__media img {
+        transform: scale(1.03);
+      }
+
+      .product-item__body {
+        display: flex;
+        align-items: center;
+        padding: clamp(1rem, 2.5vw, 1.35rem);
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(4, 6, 13, 0.28);
+      }
+
+      .product-item__desc {
+        margin: 0;
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        line-height: 1.7;
+      }
+
+      @media (max-width: 768px) {
+        .product-item {
+          grid-template-columns: 1fr;
+        }
+
+        .product-item__media {
+          min-height: clamp(200px, 55vw, 240px);
+        }
+      }
+
+      /* ─── About ─── */
+      .about {
+        padding: var(--section-pad) 0;
+      }
+
+      .about__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(2rem, 5vw, 4rem);
+        align-items: center;
+      }
+
+      .about__image-wrap {
+        position: relative;
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        border: 1px solid var(--border-glass);
+        background: rgba(4, 6, 13, 0.55);
+      }
+
+      .about__image-wrap img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        object-position: center;
+      }
+
+      .about__float-card {
+        position: absolute;
+        bottom: 1.5rem;
+        right: -1rem;
+        padding: 1.25rem 1.5rem;
+        max-width: 220px;
+      }
+
+      .about__float-card strong {
+        display: block;
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        color: var(--accent-cyan);
+        margin-bottom: 0.25rem;
+      }
+
+      .about__float-card span {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+      }
+
+      .about__list {
+        list-style: none;
+        margin-top: 1.75rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+      }
+
+      .about__list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        font-size: 0.95rem;
+        color: var(--text-muted);
+      }
+
+      .about__list li::before {
+        content: '';
+        width: 6px;
+        height: 6px;
+        margin-top: 0.55rem;
+        border-radius: 50%;
+        background: var(--accent-cyan);
+        box-shadow: 0 0 8px var(--accent-cyan);
+        flex-shrink: 0;
+      }
+
+      /* ─── Testimonials ─── */
+      .testimonials {
+        padding: var(--section-pad) 0;
+      }
+
+      .testimonials__header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .testimonials__header .section-lead {
+        margin-inline: auto;
+      }
+
+      .testimonials__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+      }
+
+      .testimonial {
+        padding: 1.75rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+
+      .testimonial__stars {
+        color: var(--accent-cyan);
+        font-size: 0.9rem;
+        letter-spacing: 0.15em;
+      }
+
+      .testimonial__quote {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        line-height: 1.7;
+        flex: 1;
+      }
+
+      .testimonial__author {
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--border-glass);
+      }
+
+      .testimonial__avatar {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 0.85rem;
+        color: var(--bg-deep);
+      }
+
+      .testimonial__name {
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      .testimonial__role {
+        font-size: 0.75rem;
+        color: var(--text-dim);
+      }
+
+      /* ─── CTA banner ─── */
+      .cta-banner {
+        padding: var(--section-pad) 0;
+      }
+
+      .cta-banner__inner {
+        position: relative;
+        padding: clamp(3rem, 8vw, 5rem) clamp(2rem, 6vw, 4rem);
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        text-align: center;
+        border: 1px solid var(--border-glass);
+        background: linear-gradient(135deg, rgba(0, 240, 255, 0.08), rgba(59, 130, 246, 0.06));
+      }
+
+      .cta-banner__inner::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at 20% 50%, rgba(0, 240, 255, 0.15), transparent 45%),
+          radial-gradient(circle at 80% 50%, rgba(59, 130, 246, 0.12), transparent 45%);
+        pointer-events: none;
+      }
+
+      .cta-banner__inner > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .cta-banner__title {
+        font-family: var(--font-display);
+        font-size: clamp(1.75rem, 4vw, 2.75rem);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        margin-bottom: 1rem;
+        max-width: 28ch;
+        margin-inline: auto;
+      }
+
+      .cta-banner__text {
+        color: var(--text-muted);
+        max-width: 40ch;
+        margin: 0 auto 2rem;
+        font-size: 1.05rem;
+      }
+
+      /* ─── Footer ─── */
+      .footer {
+        padding: 3rem 0 2rem;
+        border-top: 1px solid var(--border-glass);
+      }
+
+      .footer__grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: clamp(2rem, 5vw, 3rem);
+        align-items: start;
+        margin-bottom: 2.5rem;
+      }
+
+      .footer__links {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: clamp(2rem, 4vw, 3rem);
+        justify-content: start;
+      }
+
+      .footer__brand p {
+        margin-top: 0.75rem;
+        font-size: 0.875rem;
+        color: var(--text-dim);
+        max-width: 22rem;
+        line-height: 1.65;
+      }
+
+      .footer__col h4 {
+        font-family: var(--font-display);
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: 1rem;
+      }
+
+      .footer__col ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.55rem;
+      }
+
+      .footer__col a {
+        font-size: 0.875rem;
+        color: var(--text-dim);
+        transition: color 0.2s;
+      }
+
+      .footer__col a:hover {
+        color: var(--accent-cyan);
+      }
+
+      .footer__bottom {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        padding-top: 1.75rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        font-size: 0.8rem;
+        color: var(--text-dim);
+      }
+
+      /* ─── Responsive ─── */
+      @media (max-width: 1024px) {
+        .features__grid,
+        .testimonials__grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .showcase__header {
+          margin-bottom: 2rem;
+        }
+
+        .footer__grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .footer__links {
+          grid-template-columns: 1fr 1fr;
+          gap: 1.5rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav__links,
+        .nav__cta--desktop {
+          display: none;
+        }
+
+        .nav__toggle {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .nav__links.is-open {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          top: var(--nav-height);
+          left: 0;
+          right: 0;
+          z-index: 101;
+          padding: 1.25rem;
+          background: rgba(4, 6, 13, 0.95);
+          backdrop-filter: blur(20px);
+          border-bottom: 1px solid var(--border-glass);
+        }
+
+        .hero__grid,
+        .about__grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          align-items: flex-start;
+          padding-top: calc(var(--nav-height) + 1rem);
+          padding-bottom: 2.5rem;
+        }
+
+        .hero__content {
+          display: contents;
+        }
+
+        .hero__intro {
+          grid-column: 1;
+          grid-row: 1;
+        }
+
+        .hero__intro .hero__badge {
+          margin-bottom: 1rem;
+        }
+
+        .hero__intro .hero__title {
+          margin-bottom: 0.75rem;
+        }
+
+        .hero__intro .hero__sub {
+          margin-bottom: 0.35rem;
+        }
+
+        .hero__intro .hero__tagline {
+          margin-bottom: 0.5rem;
+        }
+
+        .hero__actions {
+          grid-column: 1;
+          grid-row: 2;
+          flex-wrap: nowrap;
+          gap: 0.65rem;
+          margin-top: 0;
+          margin-bottom: 0.5rem;
+        }
+
+        .hero__actions .btn {
+          flex: 1;
+          justify-content: center;
+          min-width: 0;
+          padding-inline: 0.65rem;
+          font-size: 0.82rem;
+        }
+
+        .hero__visual {
+          grid-column: 1;
+          grid-row: 3;
+          margin-top: 0;
+          margin-bottom: 1rem;
+        }
+
+        .hero__stats {
+          grid-column: 1;
+          grid-row: 4;
+        }
+
+        .hero__transform {
+          grid-template-columns: 1fr auto 1fr;
+          gap: 0.4rem;
+          align-items: center;
+        }
+
+        .hero__panel {
+          min-width: 0;
+        }
+
+        .hero__arrow {
+          width: 2.25rem;
+          height: 2.25rem;
+          margin: 0;
+        }
+
+        .hero__arrow--process {
+          width: 2.35rem;
+          height: 2.35rem;
+        }
+
+        .hero__arrow--process svg {
+          width: 1rem;
+          height: 1rem;
+        }
+
+        .hero__panel-label {
+          padding: 0.65rem 0.5rem;
+          font-size: 0.58rem;
+          letter-spacing: 0.1em;
+        }
+
+        .product-process__stage--after {
+          max-width: min(320px, 92vw);
+        }
+
+        .features__grid,
+        .testimonials__grid {
+          grid-template-columns: 1fr;
+        }
+
+        .about__float-card {
+          right: 1rem;
+          bottom: 1rem;
+        }
+
+        .footer__grid {
+          grid-template-columns: 1fr;
+        }
+
+        .footer__links {
+          grid-template-columns: 1fr 1fr;
+          gap: 1.5rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        .reveal {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+
+        .hero__deco-ring {
+          animation: none;
+        }
+
+        .hero__panel img {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-orb bg-orb--cyan" aria-hidden="true"></div>
+    <div class="bg-orb bg-orb--blue" aria-hidden="true"></div>
+    <div class="bg-orb bg-orb--green" aria-hidden="true"></div>
+
+    <header class="nav" id="nav" role="banner">
+      <div class="nav__inner">
+        <a class="nav__brand" href="#home">
+          <span class="nav__brand-name">Mayopp KMJ Ventures</span>
+          <span class="nav__brand-tag">Mayopp's Agro Foods</span>
+        </a>
+        <button
+          class="nav__toggle"
+          id="navToggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="navLinks"
+          aria-label="Open menu"
+        >
+          <span class="nav__toggle-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+        <ul class="nav__links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Our Services</a></li>
+          <li><a href="#showcase">Products</a></li>
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+        </ul>
+        <a class="nav__cta nav__cta--desktop" href="#contact">Order Now</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="container hero__grid">
+          <div class="hero__content">
+            <div class="hero__intro">
+              <div class="hero__badge reveal">
+                <span class="hero__badge-dot" aria-hidden="true"></span>
+                Farm to table · Crafted with care
+              </div>
+              <h1 class="hero__title reveal reveal-delay-1" id="hero-title">
+                Natural roots.<br />
+                <span>Extraordinary taste.</span>
+              </h1>
+              <p class="hero__sub reveal reveal-delay-2">
+                Mayopp KMJ Ventures transforms raw, earth-grown ingredients into premium agro
+                foods — honest processing, unforgettable flavor.
+              </p>
+              <p class="hero__tagline reveal reveal-delay-2">Mayopp's Agro Foods</p>
+            </div>
+            <div class="hero__actions reveal reveal-delay-3">
+              <a class="btn btn--glow" href="#showcase">Explore Our Products</a>
+              <a class="btn btn--ghost" href="#about">Meet the Maker</a>
+            </div>
+            <div class="hero__stats reveal reveal-delay-3">
+              <div>
+                <div class="hero__stat-value">100%</div>
+                <div class="hero__stat-label">Natural sourcing</div>
+              </div>
+              <div>
+                <div class="hero__stat-value">15+</div>
+                <div class="hero__stat-label">Product lines</div>
+              </div>
+              <div>
+                <div class="hero__stat-value">500+</div>
+                <div class="hero__stat-label">Happy customers</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__visual reveal" data-parallax="0.04">
+            <div class="hero__deco-ring" aria-hidden="true"></div>
+            <div class="hero__transform">
+              <figure class="hero__panel hero__panel--raw">
+                <img
+                  src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80"
+                  alt="Fresh natural spices and raw agricultural ingredients"
+                  width="600"
+                  height="750"
+                  loading="eager"
+                />
+                <figcaption class="hero__panel-label hero__panel-label--raw">
+                  Raw · Natural
+                </figcaption>
+              </figure>
+              <div class="hero__arrow hero__arrow--process" aria-hidden="true">
+                <span class="hero__arrow-ring"></span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                  <circle cx="12" cy="12" r="3" />
+                  <path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" />
+                </svg>
+              </div>
+              <figure class="hero__panel hero__panel--processed">
+                <!-- Original: images/hero-processed-premium-original.jpg -->
+                <img
+                  src="images/hero-processed-premium.png?v=2"
+                  alt="Prepared Ghanaian foods — weanimix porridge, fufu, fukonte, fish and shrimp powder in bowls"
+                  width="600"
+                  height="750"
+                  loading="eager"
+                />
+                <figcaption class="hero__panel-label hero__panel-label--finished">
+                  Processed · Premium
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Our Services -->
+      <section class="features" id="services" aria-labelledby="services-title">
+        <div class="container">
+          <header class="features__header reveal">
+            <span class="section-label">Our Services</span>
+            <h2 class="section-title" id="services-title">Agro foods built on integrity</h2>
+            <p class="section-lead">
+              From farm-fresh sourcing to professional agro processing, consultancy, value
+              addition, food safety, and inclusive agriculture — services built on integrity.
+            </p>
+          </header>
+          <div class="features__grid">
+            <article class="glass-card feature-card reveal">
+              <div class="feature-card__glow" aria-hidden="true"></div>
+              <div class="feature-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <h3>Farm-Fresh Sourcing</h3>
+              <p>
+                We partner with trusted growers to select only the finest raw ingredients —
+                spices, grains, and produce at peak quality.
+              </p>
+            </article>
+            <article class="glass-card feature-card reveal reveal-delay-1">
+              <div class="feature-card__glow" aria-hidden="true"></div>
+              <div class="feature-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                  <circle cx="12" cy="12" r="3" />
+                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                </svg>
+              </div>
+              <h3>Agro Processing</h3>
+              <p>
+                Professional processing of grains, blends, and agro products — preserving
+                nutrients and quality from farm to finished pack.
+              </p>
+            </article>
+            <article class="glass-card feature-card reveal reveal-delay-1">
+              <div class="feature-card__glow" aria-hidden="true"></div>
+              <div class="feature-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                  <path d="M12 20h9" />
+                  <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z" />
+                </svg>
+              </div>
+              <h3>Consultancy Services</h3>
+              <p>
+                Expert guidance on agro-food production, business setup, and scaling — practical
+                advice tailored to your operation.
+              </p>
+            </article>
+            <article class="glass-card feature-card reveal reveal-delay-2">
+              <div class="feature-card__glow" aria-hidden="true"></div>
+              <div class="feature-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                  <path d="M12 2v20M2 12h20" />
+                  <path d="m4.93 4.93 14.14 14.14M19.07 4.93 4.93 19.07" />
+                </svg>
+              </div>
+              <h3>Value Addition</h3>
+              <p>
+                Turning raw farm produce into higher-value food products — better shelf life,
+                stronger margins, and ready markets for growers.
+              </p>
+            </article>
+            <article class="glass-card feature-card reveal">
+              <div class="feature-card__glow" aria-hidden="true"></div>
+              <div class="feature-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="m9 12 2 2 4-4" />
+                </svg>
+              </div>
+              <h3>Food Safety</h3>
+              <p>
+                Hygienic handling, safe processing practices, and quality controls so every
+                product meets the standards your customers trust.
+              </p>
+            </article>
+            <article class="glass-card feature-card reveal reveal-delay-1">
+              <div class="feature-card__glow" aria-hidden="true"></div>
+              <div class="feature-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <h3>Gender Mainstreaming in Agriculture</h3>
+              <p>
+                Promoting equal opportunity for women and men across the agro value chain —
+                inclusive farming, processing, and market access.
+              </p>
+            </article>
+            <article class="glass-card feature-card reveal reveal-delay-2">
+              <div class="feature-card__glow" aria-hidden="true"></div>
+              <div class="feature-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <path d="M3 9h18M9 21V9" />
+                </svg>
+              </div>
+              <h3>Premium Packaging</h3>
+              <p>
+                Clean, durable, and shelf-stable packaging designed to protect freshness from
+                our kitchen to your table.
+              </p>
+            </article>
+            <article class="glass-card feature-card reveal">
+              <div class="feature-card__glow" aria-hidden="true"></div>
+              <div class="feature-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                </svg>
+              </div>
+              <h3>Quality Assurance</h3>
+              <p>
+                Every batch is inspected for consistency, hygiene, and taste — because your
+                reputation is our reputation.
+              </p>
+            </article>
+            <article class="glass-card feature-card reveal reveal-delay-1">
+              <div class="feature-card__glow" aria-hidden="true"></div>
+              <div class="feature-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
+              <h3>Local &amp; Regional Delivery</h3>
+              <p>
+                Serving households, retailers, and markets with reliable fulfillment — fresh
+                products, delivered on promise.
+              </p>
+            </article>
+            <article class="glass-card feature-card reveal reveal-delay-2">
+              <div class="feature-card__glow" aria-hidden="true"></div>
+              <div class="feature-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <h3>Wholesale Partnerships</h3>
+              <p>
+                Bulk orders for shops, restaurants, and distributors — competitive pricing with
+                the same uncompromising quality.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Products / Showcase -->
+      <section class="showcase" id="showcase" aria-labelledby="showcase-title">
+        <div class="container">
+          <header class="showcase__header reveal">
+            <span class="section-label">From earth to shelf</span>
+            <h2 class="section-title" id="showcase-title">Our Products</h2>
+            <p class="section-lead">
+              Mayopp's Agro Foods — premium natural ingredients milled, blended, and packed
+              for wholesome everyday meals.
+            </p>
+          </header>
+
+          <div class="products-list">
+            <article class="product-item reveal" id="weanimix" aria-labelledby="weanimix-title">
+              <div class="product-item__visual">
+                <h3 class="product-item__name" id="weanimix-title">Weanimix</h3>
+                <div class="product-item__media">
+                  <img
+                    src="images/weanimix.png"
+                    alt="Mayopp's Weanimix — packaged nutritious grain blend"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div class="product-item__body">
+                <p class="product-item__desc">
+                  A nutritious blend of soya beans, groundnuts, maize, rice, sorghum, and wheat
+                  — milled and packed for wholesome everyday meals.
+                </p>
+              </div>
+            </article>
+
+            <article class="product-item reveal" id="fukonte" aria-labelledby="fukonte-title">
+              <div class="product-item__visual">
+                <h3 class="product-item__name" id="fukonte-title">Fukonte</h3>
+                <div class="product-item__media">
+                  <img
+                    src="images/fukonte.png"
+                    alt="Mayopp's Fukonte — local fufu and kokonte blend"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div class="product-item__body">
+                <p class="product-item__desc">
+                  A combination of two beloved local foods — fufu and kokonte — made from
+                  carefully selected cassava, plantain, and cocoyam for authentic Ghanaian meals.
+                </p>
+              </div>
+            </article>
+
+            <article class="product-item reveal" id="natural-spices" aria-labelledby="natural-spices-title">
+              <div class="product-item__visual">
+                <h3 class="product-item__name" id="natural-spices-title">Natural Spices</h3>
+                <div class="product-item__media">
+                  <img
+                    src="images/natural-spices.png"
+                    alt="Mayopp's Natural Spices — blended herbs and spices"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div class="product-item__body">
+                <p class="product-item__desc">
+                  A carefully balanced blend of rosemary, coriander, fennel, bay leaf, black pepper,
+                  onion, ginger, cloves, and more — for rich, natural flavour in every dish.
+                </p>
+              </div>
+            </article>
+
+            <article class="product-item reveal" id="fish-powder" aria-labelledby="fish-powder-title">
+              <div class="product-item__visual">
+                <h3 class="product-item__name" id="fish-powder-title">Fish Powder</h3>
+                <div class="product-item__media">
+                  <img
+                    src="images/fish-powder.png"
+                    alt="Mayopp's Fish Powder — dried and milled fish seasoning"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div class="product-item__body">
+                <p class="product-item__desc">
+                  Finely milled dried fish powder that adds deep, savoury umami to soups, stews,
+                  and traditional Ghanaian dishes. 100% natural and shelf-ready.
+                </p>
+              </div>
+            </article>
+
+            <article class="product-item reveal" id="shrimp-powder" aria-labelledby="shrimp-powder-title">
+              <div class="product-item__visual">
+                <h3 class="product-item__name" id="shrimp-powder-title">Shrimp Powder</h3>
+                <div class="product-item__media">
+                  <img
+                    src="images/shrimp-powder.png"
+                    alt="Mayopp's Shrimp Powder — dried shrimp seasoning"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div class="product-item__body">
+                <p class="product-item__desc">
+                  Premium dried shrimp, ground to a fine powder — a classic seasoning for
+                  authentic coastal and inland Ghanaian cooking. 100% natural.
+                </p>
+              </div>
+            </article>
+
+            <article class="product-item reveal" id="groundnut" aria-labelledby="groundnut-title">
+              <div class="product-item__visual">
+                <h3 class="product-item__name" id="groundnut-title">Groundnut</h3>
+                <div class="product-item__media">
+                  <img
+                    src="images/groundnut.png"
+                    alt="Mayopp's Groundnut — smooth peanut paste"
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div class="product-item__body">
+                <p class="product-item__desc">
+                  Smooth, rich groundnut paste made from quality peanuts — perfect for spreads,
+                  cooking, and everyday nourishment. Available in 1.2 kg packs.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="about" id="about" aria-labelledby="about-title">
+        <div class="container about__grid">
+          <div class="about__image-wrap reveal">
+            <img
+              src="images/mabel-maker.png"
+              alt="Mabel Konadu Boahen, founder and CEO of Mayopp KMJ Ventures"
+              width="900"
+              height="1200"
+              loading="lazy"
+            />
+            <div class="glass-card about__float-card">
+              <strong>20+ yrs</strong>
+              <span>of culinary craft &amp; agro expertise</span>
+            </div>
+          </div>
+          <div class="reveal reveal-delay-1">
+            <span class="section-label">Meet the maker</span>
+            <h2 class="section-title" id="about-title">Built by hand.<br />Powered by heart.</h2>
+            <p class="section-lead">
+              Mayopp KMJ Ventures began in a family kitchen — where patience, tradition, and
+              the finest natural ingredients came together to create something extraordinary.
+            </p>
+            <p class="section-lead" style="margin-top: 1rem">
+              Led by founder and CEO <strong>Mabel Konadu Boahen</strong>, Mayopp's Agro Foods
+              carries that same spirit into every jar, pack, and batch we produce. We believe
+              the best food starts with respect for the land and ends with joy at your table.
+            </p>
+            <ul class="about__list">
+              <li>100% natural ingredient commitment — no artificial fillers</li>
+              <li>Small-batch processing for consistent quality and taste</li>
+              <li>Family-owned operations with personal accountability</li>
+              <li>Growing catalog of spices, blends, and specialty agro products</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="testimonials" id="testimonials" aria-labelledby="testimonials-title">
+        <div class="container">
+          <header class="testimonials__header reveal">
+            <span class="section-label">Customer love</span>
+            <h2 class="section-title" id="testimonials-title">Trusted at every table</h2>
+            <p class="section-lead">
+              From home cooks to market vendors — here's what people say about Mayopp's Agro
+              Foods.
+            </p>
+          </header>
+          <div class="testimonials__grid">
+            <blockquote class="glass-card testimonial reveal">
+              <div class="testimonial__stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <p class="testimonial__quote">
+                "The spice blends are unlike anything in the market. You can taste the
+                difference — fresh, bold, and perfectly balanced. My customers keep coming
+                back."
+              </p>
+              <footer class="testimonial__author">
+                <div class="testimonial__avatar" aria-hidden="true">BG</div>
+                <div>
+                  <cite class="testimonial__name">Bernice G.</cite>
+                  <span class="testimonial__role">Business Owner, Cape Coast</span>
+                </div>
+              </footer>
+            </blockquote>
+            <blockquote class="glass-card testimonial reveal reveal-delay-1">
+              <div class="testimonial__stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <p class="testimonial__quote">
+                "I switched to Mayopp's products for my restaurant and never looked back. The
+                quality is consistent, the packaging is professional, and delivery is always
+                on time."
+              </p>
+              <footer class="testimonial__author">
+                <div class="testimonial__avatar" aria-hidden="true">JO</div>
+                <div>
+                  <cite class="testimonial__name">James O.</cite>
+                  <span class="testimonial__role">Restaurant Owner</span>
+                </div>
+              </footer>
+            </blockquote>
+            <blockquote class="glass-card testimonial reveal reveal-delay-2">
+              <div class="testimonial__stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <p class="testimonial__quote">
+                "As a home cook, I love knowing exactly what's in my food. Mayopp's Agro Foods
+                feels like it was made in someone's kitchen with love — because it was."
+              </p>
+              <footer class="testimonial__author">
+                <div class="testimonial__avatar" aria-hidden="true">MF</div>
+                <div>
+                  <cite class="testimonial__name">Mary F.</cite>
+                  <span class="testimonial__role">Home Chef</span>
+                </div>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta-banner" id="contact" aria-labelledby="cta-title">
+        <div class="container">
+          <div class="cta-banner__inner reveal">
+            <h2 class="cta-banner__title" id="cta-title">
+              Ready to taste the difference?
+            </h2>
+            <p class="cta-banner__text">
+              Place an order, request a wholesale quote, or ask about our full product
+              catalog. We'd love to hear from you.
+            </p>
+            <div class="contact-actions">
+              <a
+                class="btn btn--whatsapp"
+                href="https://wa.me/233244602321?text=Hello%20Mayopp%20KMJ%20Ventures!%20I%27d%20like%20to%20place%20an%20order."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.881 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                  />
+                </svg>
+                Order on WhatsApp
+              </a>
+              <a class="btn btn--glow" href="tel:+233244602321">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path
+                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"
+                  />
+                </svg>
+                Call Mabel
+              </a>
+              <a class="btn btn--ghost" href="mailto:mabeloppong5@gmail.com">mabeloppong5@gmail.com</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <span class="nav__brand-name">Mayopp KMJ Ventures</span>
+            <p>
+              Mayopp's Agro Foods — premium natural ingredients transformed into artisan
+              products.
+            </p>
+          </div>
+          <div class="footer__links">
+            <div class="footer__col">
+              <h4>Company</h4>
+              <ul>
+                <li><a href="#services">Our Services</a></li>
+                <li><a href="#about">Our Story</a></li>
+                <li><a href="#showcase">Products</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer__col">
+              <h4>Connect</h4>
+              <ul>
+                <li>
+                  <a
+                    href="https://wa.me/233244602321?text=Hello%20Mayopp%20KMJ%20Ventures!%20I%27d%20like%20to%20place%20an%20order."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >WhatsApp</a>
+                </li>
+                <li><a href="tel:+233244602321">024 460 2321</a></li>
+                <li><a href="mailto:mabeloppong5@gmail.com">mabeloppong5@gmail.com</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>© 2026 Mayopp KMJ Ventures. All rights reserved.</span>
+          <span>Crafted with care · Mayopp's Agro Foods</span>
+        </div>
+      </div>
+    </footer>
+
+    <a
+      class="float-whatsapp"
+      href="https://wa.me/233244602321"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat on WhatsApp"
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.881 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+        />
+      </svg>
+    </a>
+
+    <script>
+      ;(function () {
+        const nav = document.getElementById('nav')
+        const navToggle = document.getElementById('navToggle')
+        const navLinks = document.getElementById('navLinks')
+
+        function setNavOpen(open) {
+          navLinks.classList.toggle('is-open', open)
+          navToggle.classList.toggle('is-active', open)
+          navToggle.setAttribute('aria-expanded', String(open))
+          navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu')
+        }
+
+        function onScroll() {
+          nav.classList.toggle('is-scrolled', window.scrollY > 24)
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true })
+        onScroll()
+
+        navToggle.addEventListener('click', function (e) {
+          e.stopPropagation()
+          setNavOpen(!navLinks.classList.contains('is-open'))
+        })
+
+        navLinks.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', function () {
+            setNavOpen(false)
+          })
+        })
+
+        document.addEventListener('click', function (e) {
+          if (!navLinks.classList.contains('is-open')) return
+          if (navToggle.contains(e.target) || navLinks.contains(e.target)) return
+          setNavOpen(false)
+        })
+
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && navLinks.classList.contains('is-open')) {
+            setNavOpen(false)
+          }
+        })
+
+        const revealEls = document.querySelectorAll('.reveal')
+        const observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible')
+                observer.unobserve(entry.target)
+              }
+            })
+          },
+          { threshold: 0.12, rootMargin: '0px 0px -40px 0px' },
+        )
+        revealEls.forEach(function (el) {
+          observer.observe(el)
+        })
+
+        document.querySelectorAll('[data-parallax]').forEach(function (el) {
+          const strength = parseFloat(el.getAttribute('data-parallax')) || 0.03
+          window.addEventListener(
+            'scroll',
+            function () {
+              if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+              const y = window.scrollY * strength
+              el.style.transform = 'translateY(' + y + 'px)'
+            },
+            { passive: true },
+          )
+        })
+
+        revealEls.forEach(function (el) {
+          if (el.closest('.hero')) el.classList.add('is-visible')
+        })
+      })()
+    </script>
+  </body>
+</html>
