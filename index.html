@@ -16,7 +16,7 @@
     <link rel="preload" as="image" href="images/fish-powder.jpg" />
     <link rel="preload" as="image" href="images/shrimp-powder.jpg" />
     <link rel="preload" as="image" href="images/groundnut.jpg" />
-    <link rel="preload" as="image" href="images/mabel-maker.jpg" />
+    <link rel="preload" as="image" href="images/mabel-maker.jpg?v=4" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -904,8 +904,9 @@
         position: relative;
         border-radius: var(--radius-xl);
         overflow: hidden;
-        border: 1px solid var(--border-glass);
+        border: 1px solid rgba(255, 255, 255, 0.12);
         background: rgba(4, 6, 13, 0.55);
+        box-shadow: 0 20px 56px rgba(0, 0, 0, 0.35);
       }
 
       .about__image-wrap img {
@@ -913,7 +914,7 @@
         width: 100%;
         height: auto;
         object-fit: contain;
-        object-position: center;
+        object-position: center top;
       }
 
       .about__float-card {
@@ -1773,12 +1774,13 @@
         <div class="container about__grid">
           <div class="about__image-wrap reveal">
             <img
-              src="images/mabel-maker.jpg"
+              src="images/mabel-maker.jpg?v=4"
               alt="Mabel Konadu Boahen, founder and CEO of Mayopp KMJ Ventures"
-              width="900"
-              height="1200"
+              width="767"
+              height="1024"
               loading="eager"
               decoding="async"
+              fetchpriority="low"
             />
             <div class="glass-card about__float-card">
               <strong>20+ yrs</strong>
