@@ -8,6 +8,15 @@
       content="Mayopp KMJ Ventures — Mayopp's Agro foods. Premium natural ingredients transformed into artisan agro products you can trust."
     />
     <title>Mayopp KMJ Ventures | Mayopp's Agro Foods</title>
+    <link rel="preload" as="image" href="images/hero-raw.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="images/hero-processed-premium.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="images/weanimix.jpg" />
+    <link rel="preload" as="image" href="images/fukonte.jpg" />
+    <link rel="preload" as="image" href="images/natural-spices.jpg" />
+    <link rel="preload" as="image" href="images/fish-powder.jpg" />
+    <link rel="preload" as="image" href="images/shrimp-powder.jpg" />
+    <link rel="preload" as="image" href="images/groundnut.jpg" />
+    <link rel="preload" as="image" href="images/mabel-maker.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -1416,11 +1425,13 @@
             <div class="hero__transform">
               <figure class="hero__panel hero__panel--raw">
                 <img
-                  src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80"
+                  src="images/hero-raw.jpg"
                   alt="Fresh natural spices and raw agricultural ingredients"
                   width="600"
                   height="750"
                   loading="eager"
+                  fetchpriority="high"
+                  decoding="sync"
                 />
                 <figcaption class="hero__panel-label hero__panel-label--raw">
                   Raw · Natural
@@ -1436,11 +1447,13 @@
               <figure class="hero__panel hero__panel--processed">
                 <!-- Original: images/hero-processed-premium-original.jpg -->
                 <img
-                  src="images/hero-processed-premium.png?v=2"
+                  src="images/hero-processed-premium.jpg"
                   alt="Prepared Ghanaian foods — weanimix porridge, fufu, fukonte, fish and shrimp powder in bowls"
                   width="600"
                   height="750"
                   loading="eager"
+                  fetchpriority="high"
+                  decoding="sync"
                 />
                 <figcaption class="hero__panel-label hero__panel-label--finished">
                   Processed · Premium
@@ -1625,11 +1638,12 @@
                 <h3 class="product-item__name" id="weanimix-title">Weanimix</h3>
                 <div class="product-item__media">
                   <img
-                    src="images/weanimix.png"
+                    src="images/weanimix.jpg"
                     alt="Mayopp's Weanimix — packaged nutritious grain blend"
                     width="800"
                     height="600"
-                    loading="lazy"
+                    loading="eager"
+                    decoding="async"
                   />
                 </div>
               </div>
@@ -1646,11 +1660,12 @@
                 <h3 class="product-item__name" id="fukonte-title">Fukonte</h3>
                 <div class="product-item__media">
                   <img
-                    src="images/fukonte.png"
+                    src="images/fukonte.jpg"
                     alt="Mayopp's Fukonte — local fufu and kokonte blend"
                     width="800"
                     height="600"
-                    loading="lazy"
+                    loading="eager"
+                    decoding="async"
                   />
                 </div>
               </div>
@@ -1667,11 +1682,12 @@
                 <h3 class="product-item__name" id="natural-spices-title">Natural Spices</h3>
                 <div class="product-item__media">
                   <img
-                    src="images/natural-spices.png"
+                    src="images/natural-spices.jpg"
                     alt="Mayopp's Natural Spices — blended herbs and spices"
                     width="800"
                     height="600"
-                    loading="lazy"
+                    loading="eager"
+                    decoding="async"
                   />
                 </div>
               </div>
@@ -1688,11 +1704,12 @@
                 <h3 class="product-item__name" id="fish-powder-title">Fish Powder</h3>
                 <div class="product-item__media">
                   <img
-                    src="images/fish-powder.png"
+                    src="images/fish-powder.jpg"
                     alt="Mayopp's Fish Powder — dried and milled fish seasoning"
                     width="800"
                     height="600"
-                    loading="lazy"
+                    loading="eager"
+                    decoding="async"
                   />
                 </div>
               </div>
@@ -1709,11 +1726,12 @@
                 <h3 class="product-item__name" id="shrimp-powder-title">Shrimp Powder</h3>
                 <div class="product-item__media">
                   <img
-                    src="images/shrimp-powder.png"
+                    src="images/shrimp-powder.jpg"
                     alt="Mayopp's Shrimp Powder — dried shrimp seasoning"
                     width="800"
                     height="600"
-                    loading="lazy"
+                    loading="eager"
+                    decoding="async"
                   />
                 </div>
               </div>
@@ -1730,11 +1748,12 @@
                 <h3 class="product-item__name" id="groundnut-title">Groundnut</h3>
                 <div class="product-item__media">
                   <img
-                    src="images/groundnut.png"
+                    src="images/groundnut.jpg"
                     alt="Mayopp's Groundnut — smooth peanut paste"
                     width="800"
                     height="600"
-                    loading="lazy"
+                    loading="eager"
+                    decoding="async"
                   />
                 </div>
               </div>
@@ -1754,11 +1773,12 @@
         <div class="container about__grid">
           <div class="about__image-wrap reveal">
             <img
-              src="images/mabel-maker.png"
+              src="images/mabel-maker.jpg"
               alt="Mabel Konadu Boahen, founder and CEO of Mayopp KMJ Ventures"
               width="900"
               height="1200"
-              loading="lazy"
+              loading="eager"
+              decoding="async"
             />
             <div class="glass-card about__float-card">
               <strong>20+ yrs</strong>
